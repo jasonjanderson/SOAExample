@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+***********************************************************************************************
+website.publishproj
+
+WARNING: DO NOT MODIFY this file, it is used for the web publish process.
+
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+***********************************************************************************************
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.30319</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2f1879a4-c56b-4d73-839c-abf51b31e9c9}</ProjectGuid>
+    <SourceWebPhysicalPath>$(MSBuildThisFileDirectory)</SourceWebPhysicalPath>
+    <SourceWebVirtualPath>/DS.Host</SourceWebVirtualPath>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SourceWebProject>http://localhost:54752</SourceWebProject>
+    <SourceWebMetabasePath>/IISExpress/7.5/LM/W3SVC/4/ROOT</SourceWebMetabasePath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- for VS2010 we need to use 10.5 but for VS2012+ we should use VisualStudioVersion -->
+    <WebPublishTargetsVersion Condition=" '$(WebPublishTargetsVersion)' =='' and '$(VisualStudioVersion)' == 10.0 ">10.5</WebPublishTargetsVersion>
+    <WebPublishTargetsVersion Condition=" '$(WebPublishTargetsVersion)'=='' ">$(VisualStudioVersion)</WebPublishTargetsVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(WebPublishTargetsVersion)</VSToolsPath>
+    <_WebPublishTargetsPath Condition=" '$(_WebPublishTargetsPath)'=='' ">$(VSToolsPath)</_WebPublishTargetsPath>
+    <AssemblyFileVersion Condition="'$(AssemblyFileVersion)' == ''">1.0.0.0</AssemblyFileVersion>
+    <AssemblyVersion Condition="'$(AssemblyVersion)' == ''">1.0.0.0</AssemblyVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AssemblyAttributes Include="AssemblyFileVersion">
+      <Value>$(AssemblyFileVersion)</Value>
+    </AssemblyAttributes>
+    <AssemblyAttributes Include="AssemblyVersion">
+      <Value>$(AssemblyVersion)</Value>
+    </AssemblyAttributes>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DS.Cart.DataAccess\DS.Cart.DataAccess.csproj">
+      <Project>{67528C19-A31F-44EB-8AE9-EA5F047157FF}</Project>
+      <Name>DS.Cart.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DS.Cart.DataLogic\DS.Cart.DataLogic.csproj">
+      <Project>{70F050D8-4C38-4A85-8F61-21A938F03429}</Project>
+      <Name>DS.Cart.DataLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DS.Cart.Entities\DS.Cart.Entities.csproj">
+      <Project>{7BA22985-5D83-4043-901A-C42E58337428}</Project>
+      <Name>DS.Cart.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DS.Cart.Service\DS.Cart.Service.csproj">
+      <Project>{6ED78BED-C876-4649-BBE6-0EB2FD3686A7}</Project>
+      <Name>DS.Cart.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DS.Cart\DS.Cart.csproj">
+      <Project>{791A00AB-8421-40B9-ACBC-FC9CC8701C3D}</Project>
+      <Name>DS.Cart</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DS.DataContracts\DS.DataContracts.csproj">
+      <Project>{15B3E0D2-6217-493A-A690-158C497F5318}</Project>
+      <Name>DS.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DS.OperationContracts\DS.OperationContracts.csproj">
+      <Project>{D4E0ACA2-E6FB-4025-91C5-B7B2F491FE10}</Project>
+      <Name>DS.OperationContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DS.Product.DataAccess\DS.Product.DataAccess.csproj">
+      <Project>{F577E504-B346-4F85-BEB1-A6842460F248}</Project>
+      <Name>DS.Product.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DS.Product.DataLogic\DS.Product.DataLogic.csproj">
+      <Project>{C124103D-7D52-4B92-9857-5C68CA458A5A}</Project>
+      <Name>DS.Product.DataLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DS.Product.Entities\DS.Product.Entities.csproj">
+      <Project>{41A16377-E91A-48DE-B4FC-DCA3170FD2BA}</Project>
+      <Name>DS.Product.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DS.Product.Service\DS.Product.Service.csproj">
+      <Project>{2FABDCDD-A2DA-46A8-BADC-5ECB948E151B}</Project>
+      <Name>DS.Product.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DS.Product\DS.Product.csproj">
+      <Project>{0E1B1C48-B90E-4D58-99E8-F8A45D08E4CB}</Project>
+      <Name>DS.Product</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(_WebPublishTargetsPath)\Web\Microsoft.WebSite.Publishing.targets" />
+</Project>
